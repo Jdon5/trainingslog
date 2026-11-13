@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trainingslog</title>
+<meta name="theme-color" content="#090909">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Trainingslog">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="preload" href="fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="app.css?v=1f3a653c">
+</head>
+<body>
+<div class="app" id="app"></div>
+
+<div class="timer" id="timer" role="status" aria-live="polite">
+  <div>
+    <div class="eyebrow" id="timerLbl">Pause</div>
+    <div class="t num" id="timerT">1:00</div>
+  </div>
+  <div class="bar"><i id="timerBar"></i></div>
+  <button class="btn sm" id="tMinus" type="button">−15 s</button>
+  <button class="btn sm" id="tPlus" type="button">+15 s</button>
+  <button class="btn sm ghost" id="tStop" type="button" aria-label="Timer stoppen">✕</button>
+</div>
+
+<div class="modal" id="modal"><div class="sheet" id="sheet"></div></div>
+
+<nav class="tabs" aria-label="Hauptnavigation"><div class="in">
+  <a href="#training" data-tab="training"><svg viewBox="0 0 24 24"><path d="M3 9v6M6 6v12M18 6v12M21 9v6M6 12h12"/></svg>Training</a>
+  <a href="#plaene" data-tab="plaene"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>Pläne</a>
+  <a href="#uebungen" data-tab="uebungen"><svg viewBox="0 0 24 24"><path d="M5 6h14M5 12h14M5 18h9"/></svg>Bibliothek</a>
+  <a href="#fortschritt" data-tab="fortschritt"><svg viewBox="0 0 24 24"><path d="M4 19l5-6 4 3 7-9"/><path d="M15 7h5v5"/></svg>Fortschritt</a>
+</div></nav>
+
+<script src="vendor/supabase.js"></script>
+<script src="app.js?v=1f3a653c"></script>
+<script>if("serviceWorker" in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));</script>
+</body>
+</html>
